@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "reviews/create"
   get "bookmarks/new"
   get "bookmarks/create"
   get "bookmarks/destroy"
@@ -29,4 +30,5 @@ Rails.application.routes.draw do
     resources :bookmarks, only: [ :new, :create ]
   end
   resources :bookmarks, only: [ :destroy ]
+  resources :reviews, only: [ :create ]
 end
