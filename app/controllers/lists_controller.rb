@@ -34,5 +34,6 @@ class ListsController < ApplicationController
 
   def list_params
     params.require(:list).permit(:name)
+    # params.expect(list: [:name]) -> use this for Rails 8 onwards!
   end
 end
