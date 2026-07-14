@@ -33,7 +33,9 @@ class ListsController < ApplicationController
   end
 
   def list_params
-    params.require(:list).permit(:name)
+    # params.require(:list).permit(:name)
     # params.expect(list: [:name]) -> use this for Rails 8 onwards!
+    # adding :photo, linked with cloudinary
+    params.require(:list).permit(:name, :photo)
   end
 end
