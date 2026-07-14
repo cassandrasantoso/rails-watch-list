@@ -1,11 +1,27 @@
-<h1>My Watch Lists</h1>
-<%= link_to "New list", new_list_path, class: "btn btn-primary" %>
+<%# <h1>My Watch Lists</h1>
+<%# <%= link_to "New list", new_list_path, class: "btn btn-primary" %>
 
-<div class="row">
+<%# <div class="row"> %>
+  <%# <% @lists.each do |list| %>
+    <%# <div class="col-md-4"> %>
+      <%# <%= link_to list.name, list_path(list) %>
+      <%# <%= button_to "Delete", list_path(list), method: :delete, class: "btn btn-danger btn-sm", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %> %>
+    <%# </div> %>
+  <%# <% end %>
+<%# </div> %>
+
+<h1>My Watch Lists</h1>
+<%= link_to "New list", new_list_path, class: "btn btn-primary mb-3" %>
+
+<div class="cards">
   <% @lists.each do |list| %>
-    <div class="col-md-4">
-      <%= link_to list.name, list_path(list) %>
-      <%= button_to "Delete", list_path(list), method: :delete, class: "btn btn-danger btn-sm", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+    <div class="position-relative">
+      <%= link_to list_path(list), class: "text-white text-decoration-none" do %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : 'https://happiclap.com/wp-content/uploads/2019/06/Everyday-Clapboard-1.jpg' %>)">
+          <%= list.name %>
+        </div>
+      <% end %>
+      <%= button_to "Delete", list_path(list), method: :delete, class: "btn btn-danger btn-sm mt-1", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
     </div>
   <% end %>
 </div>
