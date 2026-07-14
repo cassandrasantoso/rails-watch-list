@@ -1,0 +1,80 @@
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.list-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.15s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+}
+
+.list-card-link {
+  display: block;
+  text-decoration: none;
+}
+
+.list-card-cover {
+  height: 140px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+}
+
+.list-card-title {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.list-card-delete {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background: $maroon;
+  }
+}
+
+.list-hero {
+  background: $maroon;
+  color: white;
+  text-align: center;
+  padding: 4rem 1rem 3rem;
+
+  h1 {
+    margin: 0;
+    font-family: $headers-font;
+  }
+}
+
+.movie-card {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+  .card-img-top {
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+  }
+}
