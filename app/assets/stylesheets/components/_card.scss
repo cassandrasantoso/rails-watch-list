@@ -20,19 +20,31 @@
 
 .list-card-link {
   display: block;
+  height: 100%;
   text-decoration: none;
 }
 
 .list-card-cover {
-  height: 140px;
+  height: 100%;
   background-size: cover;
   background-position: center;
+  filter: grayscale(100%);
   display: flex;
   align-items: flex-end;
   padding: 1rem;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent 60%);
+  }
 }
 
 .list-card-title {
+  position: relative;
+  z-index: 1;
   color: white;
   font-size: 1.25rem;
   font-weight: 600;
