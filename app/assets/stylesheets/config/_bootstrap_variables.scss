@@ -7,23 +7,41 @@
 // General style
 $font-family-sans-serif: $body-font;
 $headings-font-family:   $headers-font;
-$body-bg:                $light-gray;
+$body-bg:                $cinema-bg;
+$body-color:             $text-main;
 $font-size-base:         1rem;
+$headings-font-weight:   600;
 
-// Colors
-$body-color: $gray;
-$primary:    $blue;
+// Links
+$link-color:             $gold;
+$link-hover-color:       $gold-bright;
+$link-decoration:        none;
+
+// Semantic colors
+$primary:    $gold;
+$secondary:  $crimson;
 $success:    $green;
 $info:       $yellow;
-$danger:     $red;
+$danger:     $crimson;
 $warning:    $orange;
 
+// Bootstrap colors
+$body-bg-dark:            $cinema-bg;
+$body-color-dark:         $text-main;
+$card-bg:                 $cinema-surface;
+$card-border-color:       $cinema-border;
+$input-bg:                $cinema-surface-2;
+$input-color:             $text-main;
+$input-border-color:      $cinema-border;
+$input-placeholder-color: $text-muted;
+$border-color:            $cinema-border;
+
 // Buttons & inputs' radius
-$border-radius-sm:            .0625rem;
-$border-radius:               .125rem;
-$border-radius-lg:            .25rem;
-$border-radius-xl:            .5rem;
-$border-radius-xxl:           1rem;
+$border-radius-sm:  .375rem;
+$border-radius:     .5rem;
+$border-radius-lg:  .75rem;
+$border-radius-xl:  1rem;
+$border-radius-xxl: 1.5rem;
 
 // Override other variables below!
 
@@ -32,11 +50,6 @@ $border-radius-xxl:           1rem;
 @import "bootstrap/variables";
 
 $theme-colors: map-merge($theme-colors, (
-  "primary": $maroon,
-  "secondary": $terracotta,
+  "primary": $gold,
+  "secondary": $crimson,
 ));
-
-body {
-  background: $cream;
-  color: $dark-text;
-}

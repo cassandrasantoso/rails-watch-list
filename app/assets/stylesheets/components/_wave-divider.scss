@@ -1,7 +1,13 @@
 .wave-divider {
-  height: 60px;
-  background: $cream;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60'%3E%3Cpath d='M0 30 Q300 60 600 30 T1200 30 V60 H0 Z' fill='%236B2737'/%3E%3C/svg%3E");
-  background-size: cover;
-  background-repeat: no-repeat;
+  height: 3px;
+  border: none;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(232, 184, 91, 0.65) 45%,
+    rgba(245, 197, 24, 0.9) 50%,
+    rgba(232, 184, 91, 0.65) 55%,
+    transparent
+  );
+  box-shadow: 0 0 24px rgba(232, 184, 91, 0.35);
 }

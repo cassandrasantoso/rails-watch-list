@@ -1,17 +1,28 @@
-// Define variables for your color scheme
+// Bootstrap colors
+$red:        #E23B3B;
+$blue:       #4C8DFF;
+$yellow:     #F5C518;
+$orange:     #E67E22;
+$green:      #2ECC71;
 
-// For example:
-$red: #FD1015;
-$blue: #0D6EFD;
-$yellow: #FFC65A;
-$orange: #E67E22;
-$green: #1EDD88;
-$gray: #0E0000;
-$light-gray: #F4F4F4;
+$gray:       #ECECF1; // primary text (light) on dark surfaces
+$light-gray: #0B0B0F; // page background (near-black)
 
-// Addition
+// Cinema theme tokens
+$cinema-bg:       #0B0B0F; // deepest background
+$cinema-surface:  #16161D; // cards, navbar
+$cinema-surface-2:#1F1F29; // raised elements, inputs
+$cinema-border:   rgba(255, 255, 255, 0.08);
 
-$maroon: #6B2737;      // primary — navbar, headings, primary buttons
-$terracotta: #C97B4A;  // secondary accent
-$cream: #F5EFE6;       // page background
-$dark-text: #2B1D1D;
+$gold:            #E8B85B; // primary accent
+$gold-bright:     #F5C518; // hover / emphasis
+$crimson:         #C0392B; // danger / remove
+
+$text-main:       #ECECF1;
+$text-muted:      #9A9AA7;
+
+// Prev colors
+$maroon:     $gold;
+$terracotta: $crimson;
+$cream:      $cinema-bg;
+$dark-text:  $text-main;

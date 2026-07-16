@@ -1,8 +1,14 @@
-// Import your components CSS files here.
+// Le Wagon defaults
 @import "alert";
 @import "avatar";
 @import "form_legend_clear";
-@import "navbar";
 
-// Addition
+// Dark Cinema redesign
+@import "base";
+@import "navbar_cinema";
 @import "wave-divider";
+@import "hero";
+@import "buttons";
+@import "list_card";
+@import "movie_card";
+// @import "forms";

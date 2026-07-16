@@ -1,5 +1,15 @@
-<%= simple_form_for [list, bookmark] do |f| %>
-  <%= f.association :movie %>
-  <%= f.input :comment %>
-  <%= f.button :submit %>
-<% end %>
+<div class="form-panel">
+  <h5 class="section-heading mb-3">Add a movie</h5>
+
+  <%= simple_form_for [list, bookmark] do |f| %>
+    <%= f.association :movie,
+          label: "Movie",
+          input_html: { class: "form-select" } %>
+
+    <%= f.input :comment,
+          input_html: { class: "form-control" },
+          placeholder: "Why does this one belong here?" %>
+
+    <%= f.button :submit, "Add to list", class: "btn btn-mint mt-2" %>
+  <% end %>
+</div>

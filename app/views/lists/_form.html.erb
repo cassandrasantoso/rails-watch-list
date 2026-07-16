@@ -1,5 +1,15 @@
-<%= simple_form_for list do |f| %>
-  <%= f.input :name %>
-  <%= f.input :photo, as: :file %>
-  <%= f.button :submit %>
-<% end %>
+<div class="form-panel">
+  <%= simple_form_for list do |f| %>
+    <%= f.input :name,
+          input_html: { class: "form-control" } %>
+
+    <%# Cover photo upload — this is what shows on the list card %>
+    <%= f.input :photo,
+          as: :file,
+          label: "Cover photo",
+          hint: "Upload an image for this list's cover.",
+          wrapper_html: { class: "file-upload" } %>
+
+    <%= f.button :submit, class: "btn btn-mint mt-3" %>
+  <% end %>
+</div>

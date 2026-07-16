@@ -1,0 +1,106 @@
+.hero {
+  position: relative;
+  padding: 7rem 1rem 6rem;
+  text-align: center;
+  overflow: hidden;
+  background-color: #101017;
+  background-size: cover;
+  background-position: center;
+  border-bottom: 1px solid $cinema-border;
+
+  // dark overlay so the hero text stays readable over any photo
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(60% 120% at 50% 0%, rgba(232, 184, 91, 0.16), transparent 60%),
+      linear-gradient(180deg, rgba(11, 11, 15, 0.55), rgba(11, 11, 15, 0.88));
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+  }
+
+  h1 {
+    font-family: $headers-font;
+    font-weight: 700;
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    line-height: 1.05;
+    margin: 0;
+    color: #fff;
+    text-wrap: balance;
+  }
+
+  .hero-tag {
+    display: inline-block;
+    margin-top: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.05rem;
+    letter-spacing: 0.02em;
+    border-bottom: 2px solid $gold;
+    padding-bottom: 2px;
+  }
+}
+
+.list-hero {
+  position: relative;
+  text-align: center;
+  padding: 5rem 1rem 4rem;
+  overflow: hidden;
+  background-color: #14100f;
+  background-size: cover;
+  background-position: center;
+
+  // dark cinematic overlay on top of the list's own cover photo
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(11, 11, 15, 0.5), rgba(11, 11, 15, 0.82));
+  }
+
+  h1 {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    font-family: $headers-font;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    color: #fff;
+  }
+}
+
+// Gold "N movies" badge, pinned to the top-right of the list hero
+.movie-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 2;
+  background: linear-gradient(180deg, $gold-bright, $gold);
+  color: #1a1204;
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+}
+
+// "add a movie" expandable button (native <details>, no JS)
+.add-movie {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  summary {
+    list-style: none;
+    cursor: pointer;
+    width: max-content;
+
+    &::-webkit-details-marker { display: none; }
+    &::marker { content: ""; }
+  }
+
+  > div { width: 100%; }
+}

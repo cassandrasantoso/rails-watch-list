@@ -1,2 +1,23 @@
 // Import page-specific CSS files here.
 @import "home";
+
+// Section heading above the movie grid ("My Lists", movie count, etc.)
+.section-heading {
+  font-family: $headers-font;
+  color: $text-main;
+}
+
+// Narrow centered wrapper for the New / Edit list + add-movie forms
+.form-wrap {
+  max-width: 560px;
+  margin: 3rem auto;
+}
+
+// Empty-state hint when a list has no movies yet
+.empty-state {
+  text-align: center;
+  color: $text-muted;
+  padding: 3rem 1rem;
+  border: 1px dashed $cinema-border;
+  border-radius: 16px;
+}
