@@ -1,19 +1,38 @@
-<div class="d-flex justify-content-between align-items-center mb-4">
-  <h1 class="mb-0">My Watch Lists</h1>
-  <%= link_to "New list", new_list_path, class: "btn btn-info" %>
+<nav class="navbar bg-white border-bottom px-4 py-3">
+  <div class="container-fluid d-flex justify-content-between align-items-center">
+    <%= link_to root_path, class: "navbar-brand fs-4" do %>
+      🍿🥤
+    <% end %>
+    <div class="d-flex gap-4">
+      <%= link_to "My lists", lists_path, class: "nav-link text-dark fw-medium" %>
+      <%= link_to "New list", new_list_path, class: "nav-link text-dark fw-medium" %>
+    </div>
+  </div>
+</nav>
+
+<div class="hero">
+  <h1>Save any kind of movies</h1>
+  <%# <span class="hero-tag">Classic</span> %>
 </div>
 
-<div class="cards">
-  <% @lists.each do |list| %>
-    <div class="list-card">
-      <%= link_to list_path(list), class: "list-card-link" do %>
-        <div class="list-card-cover" style="background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.55)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : 'https://happiclap.com/wp-content/uploads/2019/06/Everyday-Clapboard-1.jpg' %>)">
-          <span class="list-card-title"><%= list.name %></span>
-        </div>
-      <% end %>
-      <%= button_to list_path(list), method: :delete, class: "list-card-delete", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
-        <i class="fa-solid fa-trash"></i>
-      <% end %>
-    </div>
-  <% end %>
+<div class="container my-5">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="mb-0">My Lists</h1>
+    <%= link_to "Create a movie list", new_list_path, class: "btn btn-mint" %>
+  </div>
+
+  <div class="cards">
+    <% @lists.each do |list| %>
+      <div class="list-card">
+        <%= link_to list_path(list), class: "list-card-link" do %>
+          <div class="list-card-cover" style="background-image: url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : 'https://happiclap.com/wp-content/uploads/2019/06/Everyday-Clapboard-1.jpg' %>)">
+            <span class="list-card-title"><%= list.name %></span>
+          </div>
+        <% end %>
+        <%= button_to list_path(list), method: :delete, class: "list-card-delete", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+          <i class="fa-solid fa-trash"></i>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>

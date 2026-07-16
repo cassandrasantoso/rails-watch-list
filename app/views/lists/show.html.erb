@@ -1,31 +1,39 @@
-<div class="list-hero bg-primary text-white text-center py-5">
-  <h1><%= @list.name %></h1>
-  <%= link_to "Add a movie", new_list_bookmark_path(@list), class: "btn btn-info" %>
-</div>
-<div class="wave-divider"></div>
+<nav class="navbar bg-white border-bottom px-4 py-3">
+  <div class="container-fluid d-flex justify-content-between align-items-center">
+    <%= link_to root_path, class: "navbar-brand fs-4" do %>
+      🍿🥤
+    <% end %>
+    <div class="d-flex gap-4">
+      <%= link_to "My lists", lists_path, class: "nav-link text-dark fw-medium" %>
+      <%= link_to "New list", new_list_path, class: "nav-link text-dark fw-medium" %>
+    </div>
+  </div>
+</nav>
 
-<%= link_to "← Back to lists", lists_path, class: "btn btn-link ps-0" %>
+<%= link_to "← Back to lists", lists_path, class: "btn btn-link ps-4 mt-3" %>
 
 <div class="list-hero">
   <h1><%= @list.name %></h1>
 </div>
 <div class="wave-divider"></div>
 
-<div class="d-flex justify-content-between align-items-center my-4">
-  <h5 class="mb-0 text-muted"><%= pluralize(@list.bookmarks.count, "movie") %></h5>
-</div>
+<div class="container">
+  <div class="d-flex justify-content-between align-items-center my-4">
+    <h5 class="mb-0 text-muted"><%= pluralize(@list.bookmarks.count, "movie") %></h5>
+  </div>
 
-<%= render "bookmarks/form", list: @list, bookmark: @bookmark %>
+  <%= render "bookmarks/form", list: @list, bookmark: @bookmark %>
 
-<div class="cards mt-4">
-  <% @list.bookmarks.each do |bookmark| %>
-    <div class="card movie-card">
-      <%= image_tag bookmark.movie.poster_url, class: "card-img-top" %>
-      <div class="card-body">
-        <h5 class="card-title"><%= bookmark.movie.title %></h5>
-        <p class="card-text text-muted"><%= bookmark.comment %></p>
-        <%= button_to "Remove", bookmark_path(bookmark), method: :delete, class: "btn btn-outline-danger btn-sm", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+  <div class="cards mt-4">
+    <% @list.bookmarks.each do |bookmark| %>
+      <div class="card movie-card">
+        <%= image_tag bookmark.movie.poster_url, class: "card-img-top" %>
+        <div class="card-body">
+          <h5 class="card-title"><%= bookmark.movie.title %></h5>
+          <p class="card-text text-muted"><%= bookmark.comment %></p>
+          <%= button_to "Remove", bookmark_path(bookmark), method: :delete, class: "btn btn-outline-danger btn-sm", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
