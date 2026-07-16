@@ -22,17 +22,18 @@
   </div>
 
   <div class="cards">
-    <% @lists.each do |list| %>
-      <div class="list-card">
-        <%= link_to list_path(list), class: "list-card-link" do %>
-          <div class="list-card-cover" style="background-image: url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : 'https://happiclap.com/wp-content/uploads/2019/06/Everyday-Clapboard-1.jpg' %>)">
-            <span class="list-card-title"><%= list.name %></span>
-          </div>
-        <% end %>
-        <%= button_to list_path(list), method: :delete, class: "list-card-delete", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
-          <i class="fa-solid fa-trash"></i>
-        <% end %>
-      </div>
-    <% end %>
+    <div class="d-flex justify-content-between">
+      <% @lists.each do |list| %>
+        <div class="list-card">
+          <%= link_to list_path(list), class: "list-card-link" do %>
+            <div class="list-card-cover" style="background-image: url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : 'https://happiclap.com/wp-content/uploads/2019/06/Everyday-Clapboard-1.jpg' %>)">
+              <span class="list-card-title"><%= list.name %></span>
+            </div>
+          <% end %>
+          <%= button_to list_path(list), method: :delete, class: "list-card-delete", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+            <i class="fa-solid fa-trash"></i>
+          <% end %>
+        </div>
+      <% end %>
   </div>
 </div>
